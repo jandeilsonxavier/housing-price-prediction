@@ -17,7 +17,7 @@ Construir um modelo preditivo capaz de estimar o preço de imóveis residenciais
 **Atributos disponíveis:**
 
 * `price`: Preço da casa (variável alvo)
-* `area`: Área da casa (em sq ft)
+* `area`: Área da casa (em pés²)
 * `bedrooms`: Número de quartos
 * `bathrooms`: Número de banheiros
 * `stories`: Número de andares
@@ -34,24 +34,26 @@ Construir um modelo preditivo capaz de estimar o preço de imóveis residenciais
 
 ## 🔧 Pré-processamento
 
-* Conversão de variáveis categóricas em numéricas com `.map()`.
-* Treinamento/teste dividido com `train_test_split`.
-* Padronização opcional com `StandardScaler`.
-
+* Remoção de Outliers
+* Transformação de variáveis categóricas em numéricas
+* Transformação da variavel `price` em milhões para melhor visualização
+* Separar o dados em dados de treino e dados de teste com `train_test_split`
 ---
 
 ## 🧠 Scores dos Modelos Testados
 
-| Modelo                | MAE    | MSE    | RMSE   | R²     |
-| --------------------- | ------ | ------ | ------ | ------ |
-| Regressão Linear      | 0.98   | 1.77   | 1.77   | 0.65   |
-| Árvore de Decisão     | 1.24   | 2.76   | 1.66   | 0.45   |
-| Random Forest (tuned) | 1.02   | 1.93   | 1.39   | 0.62   |
-| Gradient Boosting     | 1.00   | 1.90   | 1.38   | 0.63   |
+| Modelo                 | MAE  | MSE  | RMSE | R²   |
+|------------------------|------|------|------|------|
+| Linear Regression      | 0.74 | 0.98 | 0.99 | 0.67 |
+| Lasso                  | 0.85 | 1.22 | 1.10 | 0.59 |
+| Lasso (com tuning)     | 0.75 | 0.98 | 0.99 | 0.67 |
+| Decision Tree          | 1.02 | 1.82 | 1.35 | 0.38 |
+| Random Forest          | 0.76 | 1.06 | 1.03 | 0.64 |
+| Random Forest (tuned)  | 0.75 | 0.98 | 0.99 | 0.67 |
 
 ---
 
-## 💽 Aplicação Web
+## 🌐 Aplicação Web
 
 Desenvolvido um app interativo com [**Streamlit**](https://streamlit.io) para inserção dos dados e visualização da predição.
 
@@ -75,24 +77,22 @@ pip install -r requirements.txt
 * `scikit-learn`
 * `streamlit`
 * `joblib`
-* `numpy`
 
 ---
 
-## 📌 Conclusão
+## ✅ Conclusão
 
-Este projeto demonstrou que modelos baseados em árvores (como Random Forest e Gradient Boosting) apresentam melhor desempenho do que Regressão Linear para prever preços de imóveis. O app oferece uma interface prática para usuários finais.
+O presente projeto teve como objetivo desenvolver um modelo preditivo capaz de estimar o preço de imóveis residenciais com base em características como área construída, número de quartos, banheiros, presença de comodidades adicionais e localização em rua principal. Para isso, realizamos uma série de etapas fundamentais no fluxo de um projeto de ciência de dados, incluindo análise exploratória, tratamento de dados, engenharia de variáveis, escolha e avaliação de modelos, além da construção de um aplicativo interativo com Streamlit.
+
+Após testarmos diversos algoritmos, como Regressão Linear, Lasso, Decision Tree, Random Forest e Gradient Boosting, o modelo de Random Forest Regressor com tuning de hiperparâmetros via GridSearchCV se destacou. Ele apresentou bom desempenho em termos de erro absoluto médio (MAE = 0.75) e coeficiente de determinação (R² = 0.67), equilibrando precisão e robustez, além de lidar bem com variáveis não lineares e possíveis interações entre os atributos.
+
+Além disso, adotamos práticas de boas práticas como remoção de outliers com o método do intervalo interquartil (IQR), normalização dos dados e transformação de variáveis categóricas. O modelo final foi versionado e salvo com a biblioteca joblib, e sua aplicação foi disponibilizada em formato de aplicativo web utilizando Streamlit, permitindo que usuários finais façam previsões de preços de forma simples e rápida.
+
+Este projeto demonstra como é possível aplicar técnicas de ciência de dados para resolver problemas reais de mercado imobiliário, e pode ser expandido futuramente com mais variáveis (como localização geográfica ou tempo de construção) ou com o uso de modelos ainda mais avançados. Ele está pronto para ser utilizado em produção e oferece um excelente ponto de partida para análises mais aprofundadas no setor.
 
 ---
 
-## 👨‍💼 Autor
-
-* **Jose Jandeilson Xavier dos Santos**
-* [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
-
----
-
-## 💻 Como Executar
+## 💻 Como Executar Localmente
 
 1. **Clone este repositório**
 ```bash

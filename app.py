@@ -68,4 +68,4 @@ if st.button("🔍 Prever Preço do Imóvel", type='secondary', use_container_wi
     predicted_price = model.predict(input_data)[0]
 
     # Exibir resultado
-    st.success(f"💰 O preço previsto para este imóvel é: **$ {predicted_price:,.2f} milhões**")
+    st.success(f"O preço previsto para este imóvel é: **$ {predicted_price:,.2f} milhões** 💰")

@@ -1,6 +1,6 @@
 # 🏠 Previsão de Preços de Imóveis com Machine Learning
 
-Este projeto utiliza algoritmos de Machine Learning para prever o preço de casas com base em características como área, número de quartos, localização, status de mobília, entre outros.
+O presente projeto utiliza algoritmos de Machine Learning para desenvolver um modelo preditivo capaz de estimar o preço de imóveis residenciais com base em características como área construída, número de quartos, banheiros, presença de comodidades adicionais e localização em rua principal. Para isso, realizamos uma série de etapas fundamentais no fluxo de um projeto de ciência de dados, incluindo análise exploratória, tratamento de dados, engenharia de variáveis, escolha e avaliação de modelos, além da construção de um aplicativo interativo com Streamlit.
 
 ---
 
@@ -55,13 +55,9 @@ Construir um modelo preditivo capaz de estimar o preço de imóveis residenciais
 
 ## 🌐 Aplicação Web
 
-Desenvolvido um app interativo com [**Streamlit**](https://streamlit.io) para inserção dos dados e visualização da predição.
+Desenvolvido um app interativo com **Streamlit** para inserção dos dados e visualização da predição. 
 
-### Rodar localmente:
-
-```bash
-streamlit run app.py
-```
+Link: https://jx-housing-price-prediction.streamlit.app
 
 ---
 
@@ -82,13 +78,11 @@ pip install -r requirements.txt
 
 ## ✅ Conclusão
 
-O presente projeto teve como objetivo desenvolver um modelo preditivo capaz de estimar o preço de imóveis residenciais com base em características como área construída, número de quartos, banheiros, presença de comodidades adicionais e localização em rua principal. Para isso, realizamos uma série de etapas fundamentais no fluxo de um projeto de ciência de dados, incluindo análise exploratória, tratamento de dados, engenharia de variáveis, escolha e avaliação de modelos, além da construção de um aplicativo interativo com Streamlit.
+Após testarmos diversos algoritmos, como Regressão Linear, Lasso, Decision Tree e Random Forest, o modelo de regressão linear, o Lasso com tuning, e a Random Forest otimizada apresentaram desempenho muito similar e superior aos demais modelos. O Random Forest Regressor com tuning de hiperparâmetros via GridSearchCV foi o modelo escolhido para ser utilizado no app, pois ele apresentou bom desempenho em termos de erro absoluto médio (MAE = 0.75) e coeficiente de determinação (R² = 0.67), equilibrando precisão e robustez, além de lidar bem com variáveis não lineares e possíveis interações entre os atributos.
 
-Após testarmos diversos algoritmos, como Regressão Linear, Lasso, Decision Tree, Random Forest e Gradient Boosting, o modelo de Random Forest Regressor com tuning de hiperparâmetros via GridSearchCV se destacou. Ele apresentou bom desempenho em termos de erro absoluto médio (MAE = 0.75) e coeficiente de determinação (R² = 0.67), equilibrando precisão e robustez, além de lidar bem com variáveis não lineares e possíveis interações entre os atributos.
+Além disso, foi adotado boas práticas como, verificação de dados duplicados ou faltantes, remoção de outliers com o método do intervalo interquartil (IQR) e transformação de variáveis categóricas. O modelo final foi versionado e salvo com a biblioteca joblib, e sua aplicação foi disponibilizada em formato de aplicativo web utilizando Streamlit, permitindo que usuários finais façam previsões de preços de forma simples e rápida.
 
-Além disso, adotamos práticas de boas práticas como remoção de outliers com o método do intervalo interquartil (IQR), normalização dos dados e transformação de variáveis categóricas. O modelo final foi versionado e salvo com a biblioteca joblib, e sua aplicação foi disponibilizada em formato de aplicativo web utilizando Streamlit, permitindo que usuários finais façam previsões de preços de forma simples e rápida.
-
-Este projeto demonstra como é possível aplicar técnicas de ciência de dados para resolver problemas reais de mercado imobiliário, e pode ser expandido futuramente com mais variáveis (como localização geográfica ou tempo de construção) ou com o uso de modelos ainda mais avançados. Ele está pronto para ser utilizado em produção e oferece um excelente ponto de partida para análises mais aprofundadas no setor.
+Este projeto demonstra como é possível aplicar técnicas de ciência de dados para resolver problemas reais de mercado imobiliário, e pode ser expandido futuramente com mais variáveis (como localização geográfica ou tempo de construção) ou com o uso de modelos ainda mais avançados.
 
 ---
 

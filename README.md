@@ -32,12 +32,18 @@ Construir um modelo preditivo capaz de estimar o preço de imóveis residenciais
 
 ---
 
-## 🔧 Pré-processamento
+## 🔧 Etapas do projeto
 
-* Remoção de Outliers
+* Análise Exploratória de Dados (EDA)
+* Remoção de outliers
 * Transformação de variáveis categóricas em numéricas
-* Transformação da variavel `price` em milhões para melhor visualização
-* Separar o dados em dados de treino e dados de teste com `train_test_split`
+* Transformação da variável `price` em milhões para melhor visualização
+* Separar os dados em dados de treino e dados de teste com `train_test_split`
+* Treinar e testar os modelos de machine learning
+* Compara os scores dos modelos testados
+* Salvar o melhor modelo avaliado com `joblib`
+* Desenvolvimento de um app web
+
 ---
 
 ## 🧠 Scores dos Modelos Testados
